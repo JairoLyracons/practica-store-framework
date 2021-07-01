@@ -7,7 +7,10 @@
       "info-card#productLink",
       "shelf#home",
       "flex-layout.row#home",
-      "modal-trigger#cupon"
+      "list-context.product-list",
+      "responsive-layout.desktop#desktop",
+      "responsive-layout.mobile#mobile",
+      "tab-layout"
     ]
   },
   "list-context.image-list#home":{
@@ -42,7 +45,11 @@
            "phone": 1
          },
          "infinite": true,
-         "showPaginationDots": "never"
+         "showPaginationDots": "never",
+         "autoplay":{
+           "timeout": 5000,
+           "stopOnHover": true
+         }
        }
   },
 
@@ -157,32 +164,119 @@
     "blockClass":"infoCardJogging"
   }
 },
-"modal-trigger#cupon":{
-  "children":[
-    "rich-text#cupon",
-    "modal-layout#cupon"
-  ]
+"responsive-layout.desktop#desktop":{
+  "children":["rich-text#desktop", "image#desktop"]
 },
-"rich-text#cupon":{
-  "props": {
-    "textAlignment": "CENTER",
-    "textPosition": "CENTER",
-    "text": "Ver cupón",
-    "font": "t-heading-3"
-   
-  }
+"responsive-layout.mobile#mobile":{
+  "children":["rich-text#mobile", "image#mobile"]
 },
-"modal-layout#cupon":{
-  "children":[
-    "rich-text#modal-content"
-  ]
-},
-"rich-text#modal-content":{
+"rich-text#desktop":{
   "props":{
-    "text": "Cupón: JHSIOFPJMP2021",
-    "font":"t-heading-4"
+    "text": "# Responsive Layout \n ### Ejemplo para desktop",
+    "textPosition": "LEFT",
+    "textAlignment": "LEFT"
+
   }
+},
+"rich-text#mobile":{
+  "props":{
+    "text": "### Responsive Layout. \n #### Ejemplo para mobile",
+    "textPosition": "CENTER",
+    "textAlignment": "CENTER"
+
   }
+},
+"image#desktop": {
+  "props": {
+    "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
+    "link": {
+      "url": "/small-appliances/coffee-makers"
+    } ,
+    "alt": "Coffee Makers Collection"
+  }
+},
+
+"image#mobile": {
+  "props": {
+    "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Mobile.jpg?q=1",
+    "link": {
+      "url": "/small-appliances/coffee-makers"
+    } ,
+    "alt": "Coffee Makers Collection"
+  }
+},
+"tab-layout#home": {
+  "children": ["tab-list#home", "tab-content#home"]
+},
+"tab-list#home": {
+  "children": ["tab-list.item#home1", "tab-list.item#home2"]
+},
+"tab-list.item#home1": {
+  "props": {
+    "tabId": "majorAppliances",
+    "label": "Major Appliances",
+    "defaultActiveTab": true
+  }
+},
+"tab-list.item#home2": {
+  "props": {
+    "label": "Electronics",
+    "tabId": "electronics"
+  }
+},
+"tab-content#home": {
+  "children": ["tab-content.item#home1", "tab-content.item#home2"]
+},
+"tab-content.item#home1": {
+  "children": ["rich-text#home1"],
+  "props": {
+    "tabId": "majorAppliances"
+  }
+},
+"tab-content.item#home2": {
+  "children": ["rich-text#home2"],
+  "props": {
+    "tabId": "electronics"
+  }
+},
+"rich-text#home1": {
+  "props": {
+    "text": "Área do conteúdo da tab-list.item com  tabId = majorAppliances",
+    "textPosition": "CENTER",
+    "font": "t-heading-3"
+  }
+},
+"rich-text#home2": {
+  "props": {
+    "text": "Área do conteúdo da tab-list.item com  tabId = electronics",
+    "textPosition": "CENTER",
+    "font": "t-heading-3"
+  }
+}
+// "list-context.product-list": {
+//   "blocks": ["product-summary.shelf#2"],
+//   "children": ["slider-layout"]
+// },
+// "product-summary.shelf#2": {
+//   "children": [
+//     "modal-trigger#quickview",
+//     "product-summary-name"
+//     // "product-selling-price"
+//   ]
+// },
+// "modal-trigger#quickview": {
+//   "children": ["product-summary-image", "modal-layout#quickview"]
+// },
+// "modal-layout#quickview": {
+//   "children": [
+//     "product-summary-name",
+//     "product-images",
+//     "product-summary-sku-selector",
+//     "product-summary-quantity",
+//     "add-to-cart-button"
+//   ]
+// }
+
 }
 
 

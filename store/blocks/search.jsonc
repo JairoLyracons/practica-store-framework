@@ -1,7 +1,36 @@
 {
   "store.search": {
     "blocks": [
-      
+      "search-result-layout"
+    ],
+    "props":{
+      "context":{
+        "skuFilter": "ALL",
+        "simulationBehavior": "skip",
+        "orderByField": "OrderByTopSaleDESC",
+        "hideUnavailableItems": false,
+        "maxItemsPerPage": 10
+      }
+    }
+  },
+  "search-result-layout": {
+    "blocks": [
+      "search-result-layout.desktop",
+      "search-result-layout.mobile",
+      "search-not-found-layout"
+    ]
+  },
+  "search-result-layout.desktop": {
+    "children": [
+      "breadcrumb.search",
+      "search-title.v2",
+      "total-products.v2",
+      "order-by.v2",
+      "search-fetch-previous",
+      "search-content",
+      "filter-navigator.v3",
+      "search-fetch-more"
     ]
   }
+
 }
