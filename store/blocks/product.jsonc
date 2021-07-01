@@ -1,6 +1,11 @@
 {
   "store.product": {
-    "children": ["flex-layout.row#main"]
+    "children": [
+      "breadcrumb",
+      // "product-identifier",
+      "flex-layout.row#main",
+      "modal-trigger#cupon"
+    ]
   },
   "flex-layout.row#main": {
     "props": {
@@ -23,7 +28,9 @@
     },
     "children": [
       "product-name",
+      "product-identifier.product",
       "product-price",
+      "flex-layout.row#qty-sku",
       "buy-button"
     ]
   },
@@ -32,5 +39,37 @@
       "showSavings": true,
       "showListPrice": true
     }
-  }
+  },
+  "flex-layout.row#qty-sku": {
+    "children": [
+      "sku-selector",
+      "product-quantity"
+    ]
+  },
+  "modal-trigger#cupon":{
+    "children":[
+      "rich-text#cupon",
+      "modal-layout#cupon"
+    ]
+  },
+  "rich-text#cupon":{
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Ver cupón",
+      "font": "t-heading-3"
+
+    }
+  },
+  "modal-layout#cupon":{
+    "children":[
+      "rich-text#modal-content"
+    ]
+  },
+  "rich-text#modal-content":{
+    "props":{
+      "text": "Cupón: JHSIOFPJMP2022",
+      "font":"t-heading-4"
+    }
+    }
 }
