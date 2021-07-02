@@ -6,6 +6,9 @@
     height: 500px;
 }
 
+.imageElement--cover {
+    object-fit: cover;
+  }
 
 
 /* .flexRowContent--main-header {

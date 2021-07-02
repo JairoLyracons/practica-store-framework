@@ -1,13 +1,20 @@
+//product.jsonc
 {
   "store.product": {
     "children": [
-      "breadcrumb",
-      // "product-identifier",
-      "flex-layout.row#main",
+      "condition-layout.product#cond1",
+      "flex-layout.row#product-breadcrumb",
+      "flex-layout.row#product-main",
       "modal-trigger#cupon"
     ]
   },
-  "flex-layout.row#main": {
+  "flex-layout.row#product-breadcrumb": {
+    "props": {
+      "marginTop": 20
+    },
+    "children": ["breadcrumb"]
+  },
+  "flex-layout.row#product-main": {
     "props": {
       "marginTop": 6
     },
@@ -31,7 +38,8 @@
       "product-identifier.product",
       "product-price",
       "flex-layout.row#qty-sku",
-      "buy-button"
+      "buy-button",
+      "share#default"
     ]
   },
   "product-price": {
@@ -71,5 +79,50 @@
       "text": "Cupón: JHSIOFPJMP2022",
       "font":"t-heading-4"
     }
+    },
+  "share#default": {
+    "props": {
+      "social": {
+        "Facebook": true,
+        "WhatsApp": true,
+        "Twitter": false,
+        "Pinterest": true
+      }
+    }
+  },
+  "flex-layout.row#product-secondary":{
+    "props": {
+      "colGap": 9,
+      "rowGap": 7,
+      "marginTop": 4,
+      "marginBottom": 7,
+      "paddingTop": 7,
+      "paddingBottom": 7
+      // "blockClass": "product-main"
+    },
+    "children": ["image#remeras-lyracons-banner"]
+  },
+  "image#remeras-lyracons-banner": {
+    "props": {
+     "src": "https://appliancetheme.vtexassets.com/assets/app/src/retroimage___92a8271aac7c51d2059193bdbe019016.jpg",
+      "width": "100%",
+      "height": "200px",
+      "blockClass": "cover"
+    }
+  },
+    "condition-layout.product#cond1": {
+      "props": {
+       "conditions": [
+          {
+            "subject": "productId",
+            "arguments": {
+              "id": "101170"
+            }
+          }
+       ],
+        "Then":  "flex-layout.row#product-secondary"
+        // "Else": "flex-layout.row#product-main"
+      }
     }
 }
+ 
