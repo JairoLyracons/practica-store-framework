@@ -11,7 +11,7 @@
       "stack-layout#cta",
       "responsive-layout.desktop#desktop",
       "responsive-layout.mobile#mobile",
-      "tab-layout"
+      "tab-layout#home"
     ]
   },
   "list-context.image-list#home":{
@@ -242,14 +242,14 @@
 },
 "rich-text#home1": {
   "props": {
-    "text": "Área do conteúdo da tab-list.item com  tabId = majorAppliances",
+    "text": "Área de contenido de tab-list.item con  tabId = majorAppliances",
     "textPosition": "CENTER",
     "font": "t-heading-3"
   }
 },
 "rich-text#home2": {
   "props": {
-    "text": "Área do conteúdo da tab-list.item com  tabId = electronics",
+    "text": "Área de contenido de tab-list.item con  tabId = electronics",
     "textPosition": "CENTER",
     "font": "t-heading-3"
   }
